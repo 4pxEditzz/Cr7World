@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CR7World</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="C:\Desktop\Stock\Vortex.png">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .gradient-section {
+      background-image: linear-gradient(135deg, #f7797d 0%, #FBD786 100%);
+      color: #fff;
+      transition: background-image 0.5s ease-in-out;
+    }
+
+    .content-section {
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .video-container {
+      flex-basis: 70%;
+      max-width: 70%;
+      margin-right: 20px;
+    }
+
+    .gif-container {
+      flex-basis: 30%;
+      max-width: 30%;
+      height: 315px;
+    }
+
+    .gif-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <marquee behavior="scroll" direction="right" onmousedown="this.stop();" onmouseup="this.start();">
+        Football
+      </marquee>
+    </h1>
+  </header>
+  <section class="gradient-section">
+    <div class="container">
+      <button id="play-button">Click Me!</button>
+
+      <h2>Welcome to My website!</h2>
+      <p>Yooo! Wsp, You see that button there which says "Click Me!" Yea Its a very sussy button ඞ, So press it if you Want. </p>
+    </div>
+  </section>
+  <section class="content-section">
+    <div class="container">
+      <h2>About Us</h2>
+      <div class="video-container">
+        <iframe width="420" height="315" src="https://youtube.com/embed/J15K7ZVI8RM?playlist=J15K7ZVI8RM&loop=1"></iframe>
+      </div>
+      <div class="gif-container">
+        <img class="gif-image" src="" alt="GIF">
+      </div>
+      <style>
+        .my-paragraph {
+          font-family: "Comic Sans MS", cursive;
+        }
+      </style>
+      
+      <!-- Your paragraph content -->
+      <p class="my-paragraph">"Hey there, welcome to CR7World, the sickest spot for all things CR7! We're here to feed your obsession with Cristiano Ronaldo and keep you in the loop on everything about the football wizard.</p>
+      <p class="my-paragraph">Get ready to witness mind-blowing goals, insane skills, and epic moments that prove CR7 is an absolute legend.</p>
+      <p class="my-paragraph">This is your all-access pass to Ronaldo's epic journey, on and off the field. From crazy matches to exclusive behind-the-scenes action, we've got you covered. So grab your snacks, kick back, and get hyped for a wild ride into the world of CR7. Let the madness begin, fam!"</p>
+      <p class="my-paragraph">Are you ready to dive deeper into the CR7 universe? Here at CR7Central, we're not just fans, we're a community of die-hard Ronaldo enthusiasts.</p>
+      <p class="my-paragraph">From jaw-dropping goals to jaw-dropping looks, we're obsessed with every aspect of the CR7 lifestyle.</p>
+      <p class="my-paragraph">Join us as we dissect his signature celebrations, debate his best hairstyles, and uncover the secrets of his relentless dedication to the game.</p>
+      <p class="my-paragraph">Whether you're a long-time supporter or just caught the CR7 fever, you'll find a home here. Share your favorite Ronaldo moments, engage in heated discussions, and connect with fellow CR7 fanatics from around the globe.</p>
+    </div>
+  </section>
+  <section class="gradient-section">
+    <div class="container">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Web Design</li>
+        <li>Graphic Design</li>
+        <li>UI/UX Design</li>
+      </ul>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p>© Kanz,Thisguy,Zynx._.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Get reference to the play button element
+    const playButton = document.getElementById('play-button');
+    // Get reference to the audio element
+    const audioPlayer = document.createElement('audio');
+    audioPlayer.src = "C:\\Users\\asus\\Downloads\\yt1s.com - Setup reveal XD shorts.mp3";
+
+    // Function to change the background gradients randomly
+    function changeGradients() {
+      const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+      const randomColor1 = colors[Math.floor(Math.random() * colors.length)];
+      const randomColor2 = colors[Math.floor(Math.random() * colors.length)];
+      document.querySelectorAll('.gradient-section').forEach(section => {
+        section.style.backgroundImage = `linear-gradient(135deg, ${randomColor1} 0%, ${randomColor2} 100%)`;
+      });
+    }
+
+    // Function to show the GIF
+    function showGIF() {
+      const gifImage = document.querySelector('.gif-image');
+      gifImage.src = "C:\\Users\\asus\\Downloads\\output-onlinegiftools (1).gif";
+    }
+
+    // Event listener to play the audio when the button is clicked
+    playButton.addEventListener('click', function() {
+      audioPlayer.play();
+    });
+
+    // Event listener to detect when the time updates in the audio
+    audioPlayer.addEventListener('timeupdate', function() {
+      const currentTime = audioPlayer.currentTime;
+      const duration = audioPlayer.duration;
+      // Check if the current time reaches the desired point (in seconds)
+      if (currentTime >= 8 && currentTime < duration) {
+        changeGradients();
+        showGIF();
+      }
+    });
+
+    // Append the audio player to the document body
+    document.body.appendChild(audioPlayer);
+  </script>
+</body>
+</html>
